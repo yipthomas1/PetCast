@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surveillance Camera App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <video id="video" width="640" height="480" autoplay></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+
+  <script src="opencv/opencv.js"></script>
+  <script src="yolo/yolo.js"></script>
+  <script>
+    // Load the YOLO model
+    yolo.loadModel('yolo/yolov4-tiny.cfg', 'yolo/yolov4-tiny.weights', 'yolo/coco.names', function() {
+      console.log('YOLO model loaded successfully!');
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
